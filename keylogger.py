@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import pynput
 import os
 from scapy.all import *
