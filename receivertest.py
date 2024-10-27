@@ -23,8 +23,17 @@ def icmp_sniffer():
             
             if icmp_payload:
                 decoded_payload = icmp_payload.decode('utf-8', errors='ignore')
-                print(f"[+] Extracted ICMP Payload: {decoded_payload}")
-                logging.info(f"ICMP Payload from {src_ip} to {dst_ip}: {decoded_payload}")
+                payload = list(decoded_payload)
+                joined_payload = ', '.join(f'{w}' for w in payload)
+                finished_list = []
+                for c in joined_payload:
+                    if c == "'" or c == '"' or c == ',' or c == ' ' or c == '[' or c == ']':
+                        continue
+                    else:
+                        finished_list.append(c)
+                finished_list = ''.join(finished_list)
+                print(f"[+] Extracted ICMP Payload: {finished_list}")
+                logging.info(f"ICMP Payload from {src_ip} to {dst_ip}: {finished_list}")
 
     sniff(filter="icmp", prn=packet_callback)
 
