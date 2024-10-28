@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/tool/redteam/keylogger.py", line 3, in <module>
+    import pynput
+  File "/usr/lib/python3/dist-packages/pynput/__init__.py", line 40, in <module>
+    from . import keyboard
+  File "/usr/lib/python3/dist-packages/pynput/keyboard/__init__.py", line 31, in <module>
+    backend = backend(__name__)
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pynput/_util/__init__.py", line 76, in backend
+    raise ImportError('this platform is not supported: {}'.format(
+ImportError: this platform is not supported: ('failed to acquire X connection: Bad display name ""', DisplayNameError(''))
+
+Try one of the following resolutions:
+
+ * Please make sure that you have an X server running, and that the DISPLAY environment variable is set correctly
+Traceback (most recent call last):
+  File "/tool/redteam/keylogger.py", line 3, in <module>
+    import pynput
+  File "/usr/lib/python3/dist-packages/pynput/__init__.py", line 40, in <module>
+    from . import keyboard
+  File "/usr/lib/python3/dist-packages/pynput/keyboard/__init__.py", line 31, in <module>
+    backend = backend(__name__)
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pynput/_util/__init__.py", line 76, in backend
+    raise ImportError('this platform is not supported: {}'.format(
+ImportError: this platform is not supported: ('failed to acquire X connection: Can\'t connect to display ":0": b\'Authorization required, but no authorization protocol specified\\n\'', DisplayConnectionError(':0', b'Authorization required, but no authorization protocol specified\n'))
+
+Try one of the following resolutions:
+
+ * Please make sure that you have an X server running, and that the DISPLAY environment variable is set correctly
